@@ -12,7 +12,7 @@ export default {
     data(){
         return{
             channel:[
-                {text:"热门打牌",title:"New Arrival"},
+                {text:"热门打牌",title:"New Arrival" },
                 {text:"热门打牌",title:"New Arrival"},
                 {text:"热门打牌",title:"New Arrival"},
                 {text:"热门打牌",title:"New Arrival"},

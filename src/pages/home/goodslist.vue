@@ -22,7 +22,7 @@ export default {
 </script>
 <style>
      .goodslist{
-        padding:0.0833rem 0; 
+        padding:0.0833rem 0 0.01rem 0; 
         background: #f5f5f5;
     }
     .goodslist >ul{

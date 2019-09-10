@@ -3,7 +3,7 @@
     <Goodslist/>
     <Clickmore />
     <Goodslist/>
-    <POpularbrand/>
+    <Popularbrand/>
     <Goodslist/>
 </div>
     <!-- <div class="morelist">
@@ -25,7 +25,7 @@
 <script>
 import Goodslist from "./goodslist"
 import Clickmore from "./clickmore"
-import POpularbrand from "./popularbrand"
+import Popularbrand from "./popularbrand"
 export default {
     data(){
         return{
@@ -43,7 +43,7 @@ export default {
     },
     components:{
         Clickmore,
-        POpularbrand,
+        Popularbrand,
         Goodslist,
     }
 }

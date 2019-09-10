@@ -1,11 +1,17 @@
 <template>
     <div class="home">
-        <div class="search">{{text}}</div>
+        <router-link class="search"
+        to="/search"
+        tag="div"
+        >{{text}}
+        </router-link>
         <Header/>
         <Channel/>
         <Banner/>
         <Sliderbanner/>
         <Morelist/>
+        <Hostsale/>
+        <!-- <router-view /> -->
     </div>
 </template>
 <script>
@@ -14,6 +20,7 @@ import Channel from "./channel";
 import Banner from "./banner";
 import Sliderbanner from "./sliderbanner";
 import Morelist from "./morelist";
+import Hostsale from "./hotsale";
 export default {
     name:"HomeIndex",
     data(){
@@ -26,7 +33,8 @@ export default {
         Channel,
         Banner,
         Sliderbanner,
-        Morelist
+        Morelist,
+        Hostsale
     }
 }
 </script>
@@ -44,5 +52,12 @@ export default {
     color: #ccc;
      margin: 5px auto;
     padding-left: 0.3333rem;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    left:0.1167rem;
+}
+.home{
+    margin: 0.3667rem 0 0.4rem 0;
 }
 </style>

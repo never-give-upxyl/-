@@ -1,5 +1,13 @@
 <template>
     <div>
-        brand
+        
     </div>
 </template>
+<script>
+
+export default {
+    components:{
+    
+    }
+}
+</script>

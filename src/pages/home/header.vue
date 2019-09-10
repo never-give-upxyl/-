@@ -1,6 +1,9 @@
 <template>
   <header>
-    <div class="swiper-container">
+    <router-link 
+    to="/homesport"
+    tag="div"
+    class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">Slide 1</div>
         <div class="swiper-slide">Slide 2</div>
@@ -12,7 +15,7 @@
       </div>
       <!-- 如果需要分页器 -->
       <div class="swiper-pagination"></div>
-    </div>
+    </router-link>
   </header>
 </template>
 <script>
