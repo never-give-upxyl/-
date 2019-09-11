@@ -33,7 +33,7 @@ export default {
         align-items: center
     }
     .clickmore>div{
-        padding-bottom: 0.2583rem;
+        padding-bottom: 0.19rem;
         background: white;
     }
     .clickmore h3{

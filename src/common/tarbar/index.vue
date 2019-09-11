@@ -19,7 +19,7 @@ export default {
             tags:[
                 { icon:"&#xe508;",text:"首页",path:"/home" },
                 { icon:"&#xe62c;",text:"品牌",path:"/brand" },
-                { icon:"&#xe604;",text:"我的",path:"/sort" },
+                { icon:"&#xe604;",text:"分类",path:"/sort" },
                 { icon:"&#xe6d7;",text:"购物袋",path:"/shoppingbag" },
                 { icon:"&#xe616;",text:"我的",path:"/mine" },
 
@@ -34,8 +34,9 @@ export default {
         width: 100%;
         height: 0.4083rem;
         bottom: 0px;
-        background: #ccc;
+        background: white;
         border-top:1px solid #ccc; 
+        z-index:10;
     }
     .footer ul{
         display: flex;

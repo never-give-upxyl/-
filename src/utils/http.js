@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import loading from "@lib/loading/index.js"
 const http = axios.create({
     timeout:1000,
     withCredentials:true
@@ -12,7 +12,7 @@ http.interceptors.request.use(config=>{
     }else if(config.method == "post"){
         //config.headers["content-type"] = "application/x-www-form-urlencoded"
     }
-
+    // loading.open();
     return config;
 },err=>{
     return Promise.reject(err);
@@ -21,6 +21,7 @@ http.interceptors.request.use(config=>{
 
 http.interceptors.response.use(res=>{
     if(res.status == 200){
+        // loading.close();
         return res.data;
     }
 })

@@ -7,6 +7,7 @@ import Sort from "./sort";
 import Shoppingbag from "./shoppingbag";
 import Mine from "./mine";
 import Search from "./search";
+import Todybargin from "./todybargin";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,7 @@ const router =new VueRouter({
         Shoppingbag,
         Mine,
         Search,
+        Todybargin,
     ]
 })
 export default router;

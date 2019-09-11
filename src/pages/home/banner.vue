@@ -1,19 +1,27 @@
 <template>
     <div class="banner">
-        
-            <img v-for="(item,index) in bannerimg" :key="index" 
-            :src="item.icon" alt="">
+            <img :src="this.$store.state.home.homebannerimg1" alt="">
+            <img :src="this.$store.state.home.homebannerimg2" alt="">
     </div>
 </template>
 <script>
+import  {mapState} from "vuex"
 export default {
     data(){
         return{
-            bannerimg:[
-                {icon:"https://pic12.secooimg.com/res/topic/d9e7f5fd3e2f4a7488989c42847f86ea.gif"},
-                {icon:"https://pic12.secooimg.com/res/topic/d9d7fb713b094273a30b27fc7cd49c78.jpg_!!0x0.webp"},
-            ]
+            // bannerimg:[
+            //     {icon:"https://pic12.secooimg.com/res/topic/d9e7f5fd3e2f4a7488989c42847f86ea.gif"},
+            //     {icon:"https://pic12.secooimg.com/res/topic/d9d7fb713b094273a30b27fc7cd49c78.jpg_!!0x0.webp"},
+            // ]
         }
+    },
+    computed:{
+        // ...mapState({
+        //     bannerimg:state=>state.home.
+        // })
+    },
+    created(){
+        // console.log(this);
     }
 }
 </script>

@@ -13,6 +13,7 @@
   </div>  
 </template>
 <script>
+import {sportlistApi} from "@api/homesportlist"
 export default {
     data(){
         return{
@@ -25,6 +26,10 @@ export default {
                 {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
             ]
         }
+    },
+    async created(){
+        let data =await sportlistApi();
+        console.log(data);
     }
 }
 </script>

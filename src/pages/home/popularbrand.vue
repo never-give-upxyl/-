@@ -1,35 +1,40 @@
 <template>
     <div class="popularbrand">
         <ul>
-            <h3>{{title}}</h3>
-            <h4>{{text}}</h4>
+            <h3>{{popularList.title}}</h3>
+            <h4>{{popularList.subTitle}}</h4>
             <div>
-                 <li v-for="(item,index) in list" :key="index"><img :src="item.icon" alt="" ><span>{{item.text}}</span></li>
+                 <li v-for="(item,index) in popularList.list" :key="index"><img :src="item.img" alt="" ><span>{{item.title}}</span></li>
             </div>
            
         </ul>
     </div>
 </template>
 <script>
+ import { mapState} from "vuex";
 export default {
     data(){
         return{
-            title:"人气品牌榜",
-            text:" 每 | 周 | 排 | 行 ",
-            list:[
-                {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
-                {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
-                {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
-                {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
-                {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
-                {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
-            ]        
+            // title:"人气品牌榜",
+            // text:" 每 | 周 | 排 | 行 ",
+            // list:[
+            //     {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
+            //     {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
+            //     {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
+            //     {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
+            //     {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
+            //     {text:"NEIL BARRETT",icon:"https://pic12.secooimg.com/res/topic/6fea14ee5a8d48db8b74f97f192d3e0f.jpg_!!0x0.webp"},
+            // ]        
         }
+    },
+    computed:{
+        ...mapState({
+            popularList:state=>state.home.homepopularlist,
+        })
     }
 }
 </script>
-<style >
-
+<style scoped>
 .popularbrand{
         margin-top:0.0833rem; 
         background: #f5f5f5;
@@ -53,6 +58,7 @@ export default {
 
     }
     .popularbrand>ul li img{
+        margin-left:0.0633rem; 
         width: 0.75rem;
         height: 0.75rem;
     }

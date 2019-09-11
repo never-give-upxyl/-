@@ -1,7 +1,9 @@
 import Headerlib from "./header/index.vue";
+import Bscroll from "./bscoll/index.vue";
 
 const components =[
     Headerlib,
+    Bscroll,
 ]
 const install =(Vue)=>{
     if(Vue){

@@ -2,29 +2,47 @@
     <div class="hotsale">
         <h2>猜你喜欢</h2>
         <ul >
-            <li v-for="(item ,index) in hotsale" :key="index" class="home-hotlist">
-                <img :src="item.icon" alt="">
+            <router-link
+            to="" 
+            tag="li"
+            v-for="(item ,index) in hotsale" :key="index" class="home-hotlist">
+                <img :src="item.imgUrl" alt="">
                 <p>{{item.title}}</p>
-                <p>{{item.text}}</p>
-                <p>¥  {{item.price}}<span>{{item.newvip}}</span></p>
-                <p>¥  {{item.oldprice}}<span>{{item.vip}}</span></p>
-                <p>{{item.type}}</p>
-            </li>
+                <p>{{item.name}}</p>
+                <p>¥  {{item.secooPrice}}<span>{{item.refTag}}</span></p>
+                <p>¥  {{item.tipPrice}}<span>{{item.tipTag}}</span></p>
+                <p>{{item.tags[0]}}</p>
+            </router-link>
         </ul>
         <div class="hostsale-bottom"></div>
     </div>
 </template>
 <script>
+import { mapState,mapActions} from "vuex";
+import { homehotsaleApi} from "@api/home";
 export default {
     data(){
         return{
-            hotsale:[
-                {icon:"https://pic.secoo.com/product/374/374/2019/0704/e2ad8279fc22456fa33cb09d81382e63.jpg",title:"GUCCI",text:"GUCCI/古驰 女士黑色荔枝纹双G扣风琴链条单肩斜垮包  510314 CAO0G 1000",price:"3,999",oldprice:"6,999",type:"自营",newvip:"新客价"},
-                {icon:"https://pic.secoo.com/product/374/374/2019/0704/e2ad8279fc22456fa33cb09d81382e63.jpg",title:"GUCCI",text:"GUCCI/古驰 女士黑色荔枝纹双G扣风琴链条单肩斜垮包  510314 CAO0G 1000",price:"3,999",oldprice:"6,999",type:"自营", vip:"会员价"},
-                {icon:"https://pic.secoo.com/product/374/374/2019/0704/e2ad8279fc22456fa33cb09d81382e63.jpg",title:"GUCCI",text:"GUCCI/古驰 女士黑色荔枝纹双G扣风琴链条单肩斜垮包  510314 CAO0G 1000",price:"3,999",oldprice:"6,999",type:"自营",vip:"会员价"},
-                {icon:"https://pic.secoo.com/product/374/374/2019/0704/e2ad8279fc22456fa33cb09d81382e63.jpg",title:"GUCCI",text:"GUCCI/古驰 女士黑色荔枝纹双G扣风琴链条单肩斜垮包  510314 CAO0G 1000",price:"3,999",oldprice:"6,999",type:"自营",vip:"会员价"},
-            ]
+            // hotsale:[
+            //     {icon:"https://pic.secoo.com/product/374/374/2019/0704/e2ad8279fc22456fa33cb09d81382e63.jpg",title:"GUCCI",text:"GUCCI/古驰 女士黑色荔枝纹双G扣风琴链条单肩斜垮包  510314 CAO0G 1000",price:"3,999",oldprice:"6,999",type:"自营",newvip:"新客价"},
+            //     {icon:"https://pic.secoo.com/product/374/374/2019/0704/e2ad8279fc22456fa33cb09d81382e63.jpg",title:"GUCCI",text:"GUCCI/古驰 女士黑色荔枝纹双G扣风琴链条单肩斜垮包  510314 CAO0G 1000",price:"3,999",oldprice:"6,999",type:"自营", vip:"会员价"},
+            //     {icon:"https://pic.secoo.com/product/374/374/2019/0704/e2ad8279fc22456fa33cb09d81382e63.jpg",title:"GUCCI",text:"GUCCI/古驰 女士黑色荔枝纹双G扣风琴链条单肩斜垮包  510314 CAO0G 1000",price:"3,999",oldprice:"6,999",type:"自营",vip:"会员价"},
+            //     {icon:"https://pic.secoo.com/product/374/374/2019/0704/e2ad8279fc22456fa33cb09d81382e63.jpg",title:"GUCCI",text:"GUCCI/古驰 女士黑色荔枝纹双G扣风琴链条单肩斜垮包  510314 CAO0G 1000",price:"3,999",oldprice:"6,999",type:"自营",vip:"会员价"},
+            // ]
+            hotsale:[],
         }
+    },
+    async created(){
+        let data = await homehotsaleApi();
+        // console.log(data);
+        this.hotsale=data.productList;
+        // console.log(data.productList);
+
+    },
+    methods:{
+        // ...mapActions({
+        //     gethotgoodslist:"home/gethotgoodslist"
+        // })
     }
 }
 </script>

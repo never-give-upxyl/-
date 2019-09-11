@@ -1,25 +1,41 @@
 <template>
     <div class="channel">
-        <ul v-for="(item,index) in channel" :key="index">
-            <li>{{item.text}}</li>
-            <li>{{item.title}}</li> 
+        <ul v-for="(item,index) in chananlist" :key="index">
+            <li>{{item.title}}</li>
+            <li>{{item.subTitle}}</li> 
         </ul>
 
     </div>
 </template>
 <script>
+import { mapState ,mapActions } from "vuex";
 export default {
     data(){
         return{
-            channel:[
-                {text:"热门打牌",title:"New Arrival" },
-                {text:"热门打牌",title:"New Arrival"},
-                {text:"热门打牌",title:"New Arrival"},
-                {text:"热门打牌",title:"New Arrival"},
-                {text:"热门打牌",title:"New Arrival"},
-                {text:"热门打牌",title:"New Arrival"},
-            ]
+            // channel:[
+            //     {text:"热门打牌",title:"New Arrival" },
+            //     {text:"热门打牌",title:"New Arrival"},
+            //     {text:"热门打牌",title:"New Arrival"},
+            //     {text:"热门打牌",title:"New Arrival"},
+            //     {text:"热门打牌",title:"New Arrival"},
+            //     {text:"热门打牌",title:"New Arrival"},
+            // ]
         }       
+    },
+    computed:{
+        ...mapState({
+            chananlist:state=>state.home.homechannerinfo,
+        })
+    },
+    methods:{
+        ...mapActions({
+            homegodslist:"home/homegodslist"
+        }),
+       
+    },
+    created(){
+        this.homegodslist();
+       
     }
 }
 </script>
