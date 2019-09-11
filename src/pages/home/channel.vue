@@ -1,13 +1,20 @@
 <template>
     <div class="channel">
+<<<<<<< HEAD
         <ul v-for="(item,index) in chananlist" :key="index">
             <li>{{item.title}}</li>
             <li>{{item.subTitle}}</li> 
+=======
+        <ul v-for="(item,index) in channel" :key="index">
+            <li>{{item.text}}</li>
+            <li>{{item.title}}</li> 
+>>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
         </ul>
 
     </div>
 </template>
 <script>
+<<<<<<< HEAD
 import { mapState ,mapActions } from "vuex";
 export default {
     data(){
@@ -36,6 +43,20 @@ export default {
     created(){
         this.homegodslist();
        
+=======
+export default {
+    data(){
+        return{
+            channel:[
+                {text:"热门打牌",title:"New Arrival"},
+                {text:"热门打牌",title:"New Arrival"},
+                {text:"热门打牌",title:"New Arrival"},
+                {text:"热门打牌",title:"New Arrival"},
+                {text:"热门打牌",title:"New Arrival"},
+                {text:"热门打牌",title:"New Arrival"},
+            ]
+        }       
+>>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
     }
 }
 </script>

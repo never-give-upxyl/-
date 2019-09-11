@@ -19,8 +19,13 @@ export default {
             tags:[
                 { icon:"&#xe508;",text:"首页",path:"/home" },
                 { icon:"&#xe62c;",text:"品牌",path:"/brand" },
+<<<<<<< HEAD
                 { icon:"&#xe604;",text:"分类",path:"/sort" },
                 { icon:"&#xe6d7;",text:"购物袋",path:"/shoppingbag" },
+=======
+                { icon:"&#xe604;",text:"我的",path:"/sort" },
+                { icon:"&#xe6d7;",text:"购物袋",path:"/shopcar" },
+>>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
                 { icon:"&#xe616;",text:"我的",path:"/mine" },
 
             ]
@@ -34,9 +39,15 @@ export default {
         width: 100%;
         height: 0.4083rem;
         bottom: 0px;
+<<<<<<< HEAD
         background: white;
         border-top:1px solid #ccc; 
         z-index:10;
+=======
+        background: #ccc;
+        border-top:1px solid #ccc; 
+        z-index:2;
+>>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
     }
     .footer ul{
         display: flex;
