@@ -2,7 +2,10 @@
     <div class="search">
         <div class="searchinput">
             <input type="text" placeholder="美满" >
-            <span>取消</span>
+            <router-link 
+                to="/home"
+                tag="span"
+            >取消</router-link>
         </div>
       
         <div class="searchhotsale">

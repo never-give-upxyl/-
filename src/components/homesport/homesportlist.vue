@@ -1,35 +1,40 @@
 <template>
   <div class="homesportlist">
-          <div v-for="(item,index) in goodslist" :key="index">
-            <div class="homesportlistimg"> <img :src="item.icon" alt=""></div>
+          <router-link v-for="(item,index) in goodslist" :key="index"
+          :to="{name:'details',params:{info:item}}"
+          tag="div"
+          >
+            <div class="homesportlistimg"> <img :src="item.imgUrl" alt=""></div>
             <div class="goodsinfo">
-                <P>{{item.title}}</P>
-                <P>{{item.text}}</P>
-                <P>¥ {{item.pirce}}</P>
-                <P>¥ {{item.oldprice}}</P>
+                <P>{{item.brandCnName}}</P>
+                <P>{{item.productName}}</P>
+                <P>¥ {{item.refPrice}}</P>
+                <P>¥ {{item.tipPrice}}</P>
                 <P>立即购买</P>
             </div>
-          </div>
+          </router-link>
   </div>  
 </template>
 <script>
-import {sportlistApi} from "@api/homesportlist"
+import {todygoodslistApi} from "@api/todybargin"
 export default {
     data(){
         return{
-            goodslist:[
-                {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
-                {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
-                {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
-                {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
-                {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
-                {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
-            ]
+            // goodslist:[
+            //     {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
+            //     {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
+            //     {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
+            //     {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
+            //     {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
+            //     {icon:"https://pic12.secooimg.com/product/300/300/2019/0801/ae5cb3c1954041d38238657830981199.jpg_!!0x0.webp",title:"Swarovski",text:"SWAROVSKI/施华洛世奇 DUOEVILEYE 女士玫瑰金色恶魔之眼吊坠项链5172560",pirce:"389",oldprice:"563"},
+            // ]
+            goodslist:[],
         }
     },
     async created(){
-        let data =await sportlistApi();
+        let data =await todygoodslistApi();
         console.log(data);
+        this.goodslist=data.productList
     }
 }
 </script>

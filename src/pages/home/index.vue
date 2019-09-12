@@ -1,10 +1,9 @@
 <template>
-<<<<<<< HEAD
 <div class="template">
      <div class="homesearch">
         <router-link class="search" to="/search" tag="div">{{text}}</router-link>
     </div>
-     <!-- <Xiao-Bscroll> -->
+     <Bscroll>
     <div class="home">
       <Header />
       <Channel />
@@ -14,30 +13,20 @@
       <Hostsale />
       <!-- <router-view /> -->
     </div>
-  <!-- </Xiao-Bscroll> -->
+  </Bscroll>
 </div>
  
 </template>
-<script>
-import Header from "./header";
-=======
-    <div class="home">
-        <div class="search">{{text}}</div>
-        <Header/>
-        <Channel/>
-        <Banner/>
-        <Sliderbanner/>
-        <Morelist/>
-    </div>
-</template>
+
+
+   
+
 <script>
 import Header from "./header"
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
 import Channel from "./channel";
 import Banner from "./banner";
 import Sliderbanner from "./sliderbanner";
 import Morelist from "./morelist";
-<<<<<<< HEAD
 import Hostsale from "./hotsale";
 export default {
   name: "HomeIndex",
@@ -59,7 +48,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .homesearch {
   width: 100%;
   background: white;
@@ -81,7 +70,6 @@ export default {
   color: #ccc;
   margin: 5px auto;
   padding-left: 0.3333rem;
-
   left: 0.1167rem;
 }
 .home {
@@ -89,37 +77,5 @@ export default {
 }
 .template{
     height: 100%;
-=======
-export default {
-    name:"HomeIndex",
-    data(){
-        return{
-           text: "热门  '999元三件'"
-        }
-    },
-    components:{
-        Header,
-        Channel,
-        Banner,
-        Sliderbanner,
-        Morelist
-    }
-}
-</script>
-<style>
- .search {
-    font-size: 0.1333rem;
-    background: url("http://s0.meituan.net/bs/?f=myfe/canary:/static/deploy/images/search.png")
-    no-repeat 0.0833rem center;
-    line-height: 0.2792rem;
-    border: 0px solid #cccccc;
-    width: 2.875rem;
-    height: 0.2792rem;
-    background-color: #f5f5f5;
-    background-size: 20px 20px;
-    color: #ccc;
-     margin: 5px auto;
-    padding-left: 0.3333rem;
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
 }
 </style>

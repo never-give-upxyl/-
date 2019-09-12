@@ -22,11 +22,11 @@ export default {
 </script>
 <style>
      .goodslist{
-<<<<<<< HEAD
-        padding:0.0833rem 0 0.01rem 0; 
-=======
+/* <<<<<<< HEAD */
+        /* padding:0.0833rem 0 0.01rem 0;  */
+/* ======= */
         padding:0.0833rem 0; 
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
+/* >>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2 */
         background: #f5f5f5;
     }
     .goodslist >ul{

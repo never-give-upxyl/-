@@ -1,6 +1,5 @@
 <template>
     <div>
-<<<<<<< HEAD
        <Login v-if="flag" />
        <Register v-if="!flag" />
     </div>
@@ -24,8 +23,4 @@ export default {
     }
 }
 </script>
-=======
-        我的
-    </div>
-</template>
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
+

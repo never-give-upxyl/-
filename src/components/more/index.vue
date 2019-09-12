@@ -22,7 +22,7 @@
          <div class="mod-list">
              <ul class="mod-list-goods">
                  <router-link 
-                 to="/details"
+                :to="{name:'details',params:{info:item}}"
                  v-for="(item,index) in goodslist" :key="index"
                 tag="li"
                  >
@@ -159,10 +159,7 @@ export default {
 }
 </script>
 
-<style>
-#more_body{
-    /* padding-top:0.7917rem; */
-}
+<style scoped>
     .head{
         top:0;
         width:3.125rem;
@@ -186,6 +183,10 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .backBtn.img{
+        width:0.3167rem;
+        height: 0.3167rem;
     }
     .search{
         width:2.2rem;

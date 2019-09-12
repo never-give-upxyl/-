@@ -8,7 +8,7 @@
 <script>
 import BScroll from "better-scroll";
 export default {
-    name:"Bscroll",
+    name:"Xiao-Bscroll",
     mounted(){
         this.scroll = new BScroll(this.$refs.wrapper,{
             //开启下拉刷新

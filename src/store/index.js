@@ -1,7 +1,8 @@
 import Vue from "vue"
 import Vuex from "vuex"
-<<<<<<< HEAD
+import more from "./more"
 import home from "./home"
+import todybargin from "./todybargin"
 Vue.use(Vuex)
 const store=new Vuex.Store({
     state:{
@@ -14,14 +15,9 @@ const store=new Vuex.Store({
     },
     modules:{
         home,
-=======
-import more from "./more"
-Vue.use(Vuex)
-const store=new Vuex.Store({
-
-    modules:{
-        more
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
+        more,
+        todybargin,
     }
 })
+
 export default store;

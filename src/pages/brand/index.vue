@@ -1,19 +1,6 @@
 <template>
-<<<<<<< HEAD
-    <div>
-        
-    </div>
-</template>
-<script>
 
-export default {
-    components:{
-    
-    }
-}
-</script>
-=======
-  <div v-show="bool">
+   <div v-show="bool">
     <div id="head">
       <router-link :to="path" class="backBtn" tag="div">
         <img src="../../../public/img/backBtn.png" alt />
@@ -55,10 +42,15 @@ export default {
       </router-link>
      
     </ul>
- <!-- <router-view></router-view> -->
-  </div>
- 
+   </div>
 </template>
+
+
+
+
+  
+ <!-- <router-view></router-view> -->
+
 
 <script>
 import {mapState,mapActions} from "vuex";
@@ -347,4 +339,4 @@ export default {
   line-height: 0.1667rem;
 }
 </style>
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
+

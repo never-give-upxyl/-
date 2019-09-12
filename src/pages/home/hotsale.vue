@@ -3,7 +3,7 @@
         <h2>猜你喜欢</h2>
         <ul >
             <router-link
-            to="" 
+            :to="{name:'details',params:{info:item}}" 
             tag="li"
             v-for="(item ,index) in hotsale" :key="index" class="home-hotlist">
                 <img :src="item.imgUrl" alt="">
@@ -33,9 +33,17 @@ export default {
         }
     },
     async created(){
-        let data = await homehotsaleApi();
-        // console.log(data);
-        this.hotsale=data.productList;
+        let data
+        if(!sessionStorage.getItem("hotlist")){
+              data = await homehotsaleApi();
+              console.log(data);
+              sessionStorage.setItem("hotlist",JSON.stringify(data))
+        }  else{
+            data=JSON.parse(sessionStorage.getItem("hotlist"))
+        }
+       this.hotsale=data.productList;
+       
+        
         // console.log(data.productList);
 
     },

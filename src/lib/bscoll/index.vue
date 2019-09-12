@@ -1,45 +1,62 @@
 <template>
-    <div class="bscroll" ref="bscroll">
+    <div class="wrapper" ref="wrapper">
         <slot></slot>
     </div>
 </template>
+
+
 <script>
-import Bscroll from "better-scroll";
+import BScroll from "better-scroll";
 export default {
-    name:"Xiao-Bscroll",
+    name:"Bscroll",
     mounted(){
-        this.scroll =new Bscroll(this.$refs.bscroll,{
+        this.scroll = new BScroll(this.$refs.wrapper,{
+            //开启下拉刷新
             // pullDownRefresh:true,
+            //开启上拉加载更多
+            pullUpLoad:true,
             tap:true,
-        })
+            click:true,
+            scrollX:true
+        });
     },
     methods:{
-        handlepillingDown(cb){
+        //下拉刷新
+        handlepullingDown(cb){
             this.scroll.on("pullingDown",()=>{
                 cb()
             })
         },
+        //下拉刷新后通过bscroll可以做下一次请求，
         handlefinishPullDown(){
             this.scroll.finishPullDown();
+            //并且重新计算滚动区域的高度
             this.scroll.refresh();
         },
-        handlepullingup(cb){
-            this.scroll.on("pillingUp",()=>{
+        //上拉加载更多
+        handlepullingUp(cb){
+            this.scroll.on("pullingUp",()=>{
                 cb();
             })
         },
-        handlefinishPullup(){
+        //上拉加载更多后通过bscroll可以做下一次请求
+        handlefinishPullUp(){
+        
             this.scroll.finishPullUp();
+            //并且重新计算滚动区域的高度
             this.scroll.refresh();
+         
         },
-        handleScrolltop(t){
+        //滚动到指定位置
+        handleScrollTop(t){
             this.scroll.scrollTo(0,-t,300)
         }
     }
 }
 </script>
+
 <style>
-    .bscroll{
+    .wrapper{
         height: 100%;
     }
 </style>

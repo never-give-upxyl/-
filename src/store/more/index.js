@@ -53,6 +53,9 @@ const actions = {
     },
     sortArr({commit}){
         commit("MutationSortArr")
+    },
+    detailsGoods({commit}){
+        
     }
 }
 

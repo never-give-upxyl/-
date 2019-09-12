@@ -1,22 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "./home";
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import Honecarouse from "./home/other/homecarouse"
-=======
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
+// =======
+// >>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
 import Brand from "./brand";
 import Sort from "./sort";
 import Shoppingbag from "./shoppingbag";
 import Mine from "./mine";
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import Search from "./search";
 import Todybargin from "./todybargin";
-=======
+// =======
 import More from "./more";
 import Details from "./details"
 import Shopcar from "./shopcar"
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
+// >>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
 
 Vue.use(VueRouter);
 
@@ -25,22 +25,22 @@ const router =new VueRouter({
     routes:[
         {path:'/',redirect:"/home"},
         Home,
-<<<<<<< HEAD
+// <<<<<<< HEAD
         Honecarouse,
-=======
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
+// =======
+// >>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
         Brand,
         Sort,
         Shoppingbag,
         Mine,
-<<<<<<< HEAD
+// <<<<<<< HEAD
         Search,
         Todybargin,
-=======
+// =======
         More,
         Details,
         Shopcar
->>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
+// >>>>>>> c9cfe97fe1280af3cb7b3c4af0973151513e30e2
     ]
 })
 export default router;
